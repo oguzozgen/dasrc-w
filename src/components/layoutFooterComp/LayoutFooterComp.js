@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import {Footer,Container} from 'theme-ui' 
+import {Footer,Container} from 'theme-ui'
 import {Button,Box } from 'rebass'
 import {Label, Select} from '@rebass/forms'
 function LayoutFooterComp(props){
@@ -16,12 +17,9 @@ function LayoutFooterComp(props){
     return (
         <Footer>
             <Container>
-                <Box>
-                    <Button sx={{
-                        bg:"background",
-                        color:"text"
-                    }}> <strong>ABOUT</strong></Button>
-                </Box>
+
+                   <Link to="/AboutPage" style={{textDecoration:"none"}} sx={{color:"text"}}><span><strong>ABOUT</strong></span></Link>
+
                 <Box  width={[ 1/4 ]}>
                     <Select
                         id='productSelectId'

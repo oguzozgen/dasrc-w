@@ -1,12 +1,12 @@
-import React from 'react';
-import LayoutCont from './containers/layoutCont/layoutCont';
-import HeadPresentCont from './containers/headPresentCont/headPresentCont';
+import React from 'react'
+import LayoutCont from './containers/layoutCont/LayoutCont'
+import { Routes } from './routes/route';
 import './App.scss';
 
 function App() {
   return (
     <LayoutCont>
-       <HeadPresentCont></HeadPresentCont>
+      <Routes />
     </LayoutCont>
   );
 }
