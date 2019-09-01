@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 import {Footer,Container} from 'theme-ui' 
 import {Button,Box } from 'rebass'
 import {Label, Select} from '@rebass/forms'
-function FooterComp(props){
+function LayoutFooterComp(props){
     const productSelect={
         0: "Products",
         1: "DasMedia Geo",
@@ -40,4 +40,4 @@ function FooterComp(props){
         </Footer>
     );
 }
-export default FooterComp;
+export default LayoutFooterComp;

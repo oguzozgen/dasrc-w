@@ -3,7 +3,7 @@ import React from 'react'
 import { jsx } from 'theme-ui'
 import {Box} from 'rebass'
 
-function HeadPresentComp(){
+function HeadPresentCont(){
     return(
         <Box sx={{color:'text', fontSize:4}}>
             WE ARE <strong>DASRC</strong>
@@ -16,4 +16,4 @@ function HeadPresentComp(){
     );
 }
 
-export default HeadPresentComp;
+export default HeadPresentCont;

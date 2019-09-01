@@ -7,22 +7,22 @@ import {
 
 } from 'theme-ui';
 import themeRebass from '@rebass/preset';
-import HeaderComp from './subComponents/headerComp/headerComp'
-import FooterComp from './subComponents/footerComp/footerComp'
-import './layoutComp.scss';
+import LayoutHeaderComp from '../../components/layoutHeaderComp/layoutHeaderComp'
+import LayoutFooterComp from '../../components/layoutFooterComp/layoutFooterComp'
+import './layoutCont.scss';
 
-function LayoutComp (props){
+function LayoutCont (props){
     return (
         <ThemeProvider theme={themeRebass}>
             <Layout>
-                <HeaderComp></HeaderComp>
+                <LayoutHeaderComp></LayoutHeaderComp>
                 <Main>
                     <Container>{props.children}</Container>
                 </Main>
-                <FooterComp></FooterComp>
+                <LayoutFooterComp></LayoutFooterComp>
             </Layout>
         </ThemeProvider>
         );
 }
 
-export default LayoutComp;
+export default LayoutCont;
