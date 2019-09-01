@@ -3,8 +3,8 @@ import {
     ThemeProvider,
     Layout,
     Main,
-    Container
-
+    Container,
+    Flex,
 } from 'theme-ui';
 import themeRebass from '@rebass/preset';
 import LayoutHeaderComp from '../../components/layoutHeaderComp/LayoutHeaderComp'
@@ -21,9 +21,15 @@ function LayoutCont (props){
                     <Container>
                       <LayoutHeadPresentComp></LayoutHeadPresentComp>
                     </Container>
-                    <Container>
-                      {props.children}
-                    </Container>
+                      <Container style={{
+                        display: 'flex',
+                          alignItems: 'center',
+                          alignSelf: 'center',
+                          alignContent: 'center',
+                          justifyContent: 'center'
+                        }}>
+                              {props.children}
+                      </Container>
                 </Main>
                 <LayoutFooterComp></LayoutFooterComp>
             </Layout>

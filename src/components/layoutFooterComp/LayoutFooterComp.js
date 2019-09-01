@@ -3,39 +3,83 @@ import { Link } from 'react-router-dom'
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import {Footer,Container} from 'theme-ui'
-import {Button,Box } from 'rebass'
+import {Button,Box,Text ,Flex} from 'rebass'
 import {Label, Select} from '@rebass/forms'
+import './LayoutFooterComp.scss'
+
 function LayoutFooterComp(props){
-    const productSelect={
-        0: "Products",
-        1: "DasMedia Geo",
-        2: "DasGeo",
-        3: "DasReady Mobile",
-        4: "DasVR",
-        5: "Verymir"
+    const productSelect=[
+      {name:"Products"},
+        {name:"DasMedia Geo"},
+        {name:"DasGeo"},
+        {name:"DasReady Mobile"},
+        {name:"DasVR"},
+        {name:"Verymir"}
+    ];
+
+
+    /**
+    * when link element transform to "a" element
+    * variants='nav' some of property overriding
+    * Here original nav copy-pasted from
+    * Through theme-ui elements
+    * @see @rebass/preset in node_modules
+    * @url https://github.com/rebassjs/rebass/blob/cf6cf963ea0f736ec899bba401175ed062eca3c8/packages/preset/src/index.js
+    */
+    const variantNavStyleFix={
+       textDecoration:'none',
+       fontWeight: 'bold',
+       display: 'inline-block',
+       p: 2,
+       color: 'inherit',
+       textDecoration: 'none',
+       ':hover,:focus,.active': {
+         color: 'primary',
+        }
     };
     return (
-        <Footer>
-            <Container>
-
-                   <Link to="/AboutPage" style={{textDecoration:"none"}} sx={{color:"text"}}><span><strong>ABOUT</strong></span></Link>
-
-                <Box  width={[ 1/4 ]}>
-                    <Select
-                        id='productSelectId'
-                        name='productSelect'
-                        defaultValue='United States'>
-                        {Object.entries(productSelect).map(([ key, product ]) => (
-                        <option
-                            key={key}>
-                            {product}
-                        </option>
-                        ))}
-                    </Select>
-                    </Box>
+        <Footer className={"fixed-footer-addition"}>
+            <Container className={"fixed-footer-addition"}>
+              <Flex
+                bg="white"
+                flexWrap='wrap'
+                px={2}
+                fontSize={[1,2]}
+                color='text'
+                alignItems='center'
+                alignContent='center'
+                justifyContent='flex-end'
+                >
+                <Link variant='nav' to="/" sx={variantNavStyleFix} >
+                  HOME
+                </Link>
+                <Link variant='nav' to="/ProductsPage" sx={variantNavStyleFix} >
+                  PRODUCTS
+                </Link>
+                <Link variant='nav' to="/ServicesPage" sx={variantNavStyleFix} >
+                  SERVICES
+                </Link>
+                <Link variant='nav' to="/AboutPage" sx={variantNavStyleFix} >
+                  ABOUT
+                </Link>
+              </Flex>
             </Container>
-
         </Footer>
     );
 }
 export default LayoutFooterComp;
+
+/*
+<Select
+    id='productSelectId'
+    name='productSelect'>
+    {Object.entries(productSelect).map(([ key, product ]) => (
+    <option
+        key={key}>
+        <Link key={key} variant='nav' to="/AboutPage"  >
+        {product.name}
+        </Link>
+    </option>
+    ))}
+</Select>
+*/

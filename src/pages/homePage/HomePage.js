@@ -1,10 +1,10 @@
 import React from 'react'
+import {Flex} from 'rebass';
 
 function HomePage(){
     return (
-      <div>
-        <strong>HOME</strong>
-      </div>
+    <>
+    </>
     );
 };
 
