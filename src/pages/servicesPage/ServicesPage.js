@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 import {Flex,Box,Heading,Text} from 'rebass'
 import UnderDevelopmentComp from "../../components/underDevelopmentComp/UnderDevelopmentComp";
 
-function AboutPage(){
+function ServicesPage(){
 
 
   return (
@@ -19,9 +19,8 @@ function AboutPage(){
       >
 
     <Box width={[1,1/2]} fontSize={[1,3]} sx={{color:'grey'}}>
-      <Heading fontSize={[3,5]} textAlign={"center"}>ABOUT</Heading>
+      <Heading fontSize={[3,5]} textAlign={"center"}>SERVICES</Heading>
       <Text>
-
       </Text>
       <UnderDevelopmentComp/>
     </Box>
@@ -29,4 +28,4 @@ function AboutPage(){
   );
 }
 
-export default AboutPage;
+export default ServicesPage;
