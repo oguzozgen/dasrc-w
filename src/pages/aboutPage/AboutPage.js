@@ -8,7 +8,7 @@ function AboutPage(){
 
 
   return (
-    <Flex
+       <Flex
       flexWrap='wrap'
       px={2}
       fontSize={[1,3]}
@@ -21,7 +21,6 @@ function AboutPage(){
     <Box width={[1,1/2]} fontSize={[1,3]} sx={{color:'grey'}}>
       <Heading fontSize={[3,5]} textAlign={"center"}>ABOUT</Heading>
       <Text>
-
       </Text>
       <UnderDevelopmentComp/>
     </Box>
