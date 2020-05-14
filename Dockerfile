@@ -1,7 +1,12 @@
-# Stage 1 - the build process
-FROM node:12.16 as build-deps
-WORKDIR /usr/src/app
-COPY package.json yarn.lock ./
-RUN yarn
-COPY . ./
-RUN yarn build
+FROM mhart/alpine-node:12 AS builder
+WORKDIR /app
+COPY . .
+RUN npm install react-scripts -g --silent
+RUN yarn install
+RUN yarn run build
+
+FROM mhart/alpine-node
+RUN yarn global add serve
+WORKDIR /app
+COPY --from=builder /app/build .
+CMD ["serve", "-p", "3000", "-s", "."]doc
