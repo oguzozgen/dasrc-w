@@ -16,10 +16,10 @@ function LayoutCont (props){
     return (
         <ThemeProvider theme={themeRebass}>
             <Layout>
-                <LayoutHeaderComp></LayoutHeaderComp>
+               
                 <Main>
                     <Container>
-                      <LayoutHeadPresentComp></LayoutHeadPresentComp>
+                     
                     </Container>
                       <Container style={{
                         display: 'flex',
@@ -31,10 +31,19 @@ function LayoutCont (props){
                               {props.children}
                       </Container>
                 </Main>
-                <LayoutFooterComp></LayoutFooterComp>
+               
             </Layout>
         </ThemeProvider>
         );
 }
 
 export default LayoutCont;
+/** 
+ *  in first container inside main
+ *  <LayoutHeadPresentComp></LayoutHeadPresentComp>
+ *  before main
+ *  <LayoutHeaderComp></LayoutHeaderComp>
+ * afteher main
+ * <LayoutFooterComp></LayoutFooterComp> 
+ * 
+ * */
